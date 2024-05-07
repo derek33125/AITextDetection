@@ -1,95 +1,31 @@
 # AITextDetection
 This work investigates various methodologies, including Support Vector Machines (SVM) with RBF kernels, Bidirectional Long Short-Term Memory (BiLSTM) networks with attention mechanisms, and the Mistral model, for classifying machine generated text. We evaluate these models on the M4 dataset and MGTBench for out-of-distribution data, as well as on mixed data within MixSet. Our results indicate that SVMs equipped with RBF kernels and BiLSTMs augmented with attention mechanisms significantly outperform other models in their respective categories with over **96%** accuracy over M4 dataset and **97%** accuracy on unseen GPT4 generated data. Additionally, we find that the choice of data mixing method crucially impacts the effectiveness of the detectors, with the humanization approach posing the greatest challenge.
 
-# Table Of Contents
+# Document
+Please read the following document to know the detail behind this project:
+- [Proposal](https://github.com/derek33125/AITextDetection/blob/main/Document/Project%20Proposal%20-%20GPT%20refined%20version.pdf)
+- [MReport](https://github.com/derek33125/AITextDetection/blob/main/Document/Project%20MileStone%20-%20GPT%20refined%20Version.pdf)
+- [Final Report](https://github.com/derek33125/AITextDetection/blob/main/Document/Aist4010_Final_Report_GPT%20refined%20Version.pdf)
+- [Presentation](https://github.com/derek33125/AITextDetection/blob/main/Document/1155158302_Derek_Presentation.pptx)
 
+# Table Of Contents
 -  [Getting Started](#getting-started)
 -  [In Details](#in-details)
     -  [Project architecture](#project-architecture)
+       -  [SVM](#SVM)
+       -  [BiLSTM series](#BiLSTM-Series)
+       -  [Mistral 7B](#Mistral-7B)
     -  [Folder structure](#folder-structure)
-    -  [ Main Components](#main-components)
-        -  [Models](#models)
-        -  [Trainer](#trainer)
-        -  [Data Loader](#data-loader)
-        -  [Logger](#logger)
-        -  [Configuration](#configuration)
-        -  [Main](#main)
- -  [Future Work](#future-work)
- -  [Contributing](#contributing)
- -  [Acknowledgments](#acknowledgments)
+    -  [Result](#result)
+       - [SVM Result](#SVM-result)
+       - [BiLSTM Result](#BiLSTM-result)
+       - [Mistral 7B Result](#Mistral-result)
 
 # Getting Started   
-In a nutshell here's how to use this template, so **for example** assume you want to implement VGG model so you should do the following:
--  In models folder create a class named VGG that inherit the "base_model" class
-
-```python
-
-    class VGGModel(BaseModel):
-        def __init__(self, config):
-            super(VGGModel, self).__init__(config)
-            #call the build_model and init_saver functions.
-            self.build_model() 
-            self.init_saver() 
-  ```
-- Override these two functions "build_model" where you implement the vgg model, and "init_saver" where you define a tensorflow saver, then call them in the initalizer.
-    
-```python
-     def build_model(self):
-        # here you build the tensorflow graph of any model you want and also define the loss.
-        pass
-            
-     def init_saver(self):
-        # here you initalize the tensorflow saver that will be used in saving the checkpoints.
-        self.saver = tf.train.Saver(max_to_keep=self.config.max_to_keep)
-
-  ```
-   
-- In trainers folder create a VGG trainer that inherit from "base_train" class
-```python
-
-    class VGGTrainer(BaseTrain):
-        def __init__(self, sess, model, data, config, logger):
-            super(VGGTrainer, self).__init__(sess, model, data, config, logger)
-```
-- Override these two functions "train_step", "train_epoch" where you write the logic of the training process
-```python
-
-    def train_epoch(self):
-        """
-       implement the logic of epoch:
-       -loop on the number of iterations in the config and call the train step
-       -add any summaries you want using the summary
-        """
-        pass
-
-    def train_step(self):
-        """
-       implement the logic of the train step
-       - run the tensorflow session
-       - return any metrics you need to summarize
-       """
-        pass
-
-```
-- In main file, you create the session and instances of the following objects "Model", "Logger", "Data_Generator", "Trainer", and config
-```python
-    sess = tf.Session()
-    # create instance of the model you want
-    model = VGGModel(config)
-    # create your data generator
-    data = DataGenerator(config)
-    # create tensorboard logger
-    logger = Logger(sess, config)
-```
-- Pass the all these objects to the trainer object, and start your training by calling "trainer.train()" 
-```python
-    trainer = VGGTrainer(sess, model, data, config, logger)
-
-    # here you train your model
-    trainer.train()
-
-```
-**You will find a template file and a simple example in the model and trainer folder that shows you how to try your first model simply.**
+- In data generation, you can modify the code inside the **Data_Generation** folder to alter the training and testing dataset based on you need. If not, you can directly use the generated data inside the **Code** folder for direct testing.
+- In the **Code** folder, it already provides all the models' training and inference code for getting the results. Notice that the evaluation metrics in MixSet is a bit different from other testing dataset so you may need to uncomment or modify the testing method when doing evaluation.
+- For Mistral7B, please ensure that you are having at least A100 GPU before training and testing.
+**Notice that the final accuracy in MixSet should be 1 - original accuracy due to the objective in testing that dataset. Detail is listed in the code**
 
 
 # In Details
@@ -97,125 +33,101 @@ In a nutshell here's how to use this template, so **for example** assume you wan
 Project architecture 
 --------------
 
+### SVM
+To task the performance of those traditional machine-learning method for classification of LLM generated text with human text, I incorporated the SVM for text classification. Before deploying the model, the preprocessed the data will further employs the TFIDF to converts the text data into a matrix of TFIDF features to enabling the SVM to know the textual features. The TFIDF vectors is set with the maximum length of 1000. After that, the radius basis function will be act as the kernel of SVM and do the classification. I tried evaluating its performance using different kernels (Linear, Ploy, Sigmoid, RBF).
+
+### BiLSTM Series
+
 <div align="center">
-
-<img align="center" hight="600" width="600" src="https://github.com/Mrgemy95/Tensorflow-Project-Templete/blob/master/figures/diagram.png?raw=true">
-
+<img align="center" hight="600" width="600" src="https://github.com/derek33125/AITextDetection/blob/main/Figures_Results_Graphs/Figures/BiLSTM/BiLSTM%20series%20models.png?raw=true">
 </div>
 
+### Mistral 7B
+The Mistral 7B model is another key component of this study. According to the model’s foundationalpaper, Mistral 7B significantly outperforms the popular Llama 2 13B across all benchmarks, and evensurpasses Llama 34B on many benchmarks. This demonstrates that smaller language models canmatch the capabilities of larger ones when optimized correctly. For this project,we utilize the Mistral-7B variant enhanced with Block-wise Model-update Filtering and Bit-centering(BNB), which boosts model efficiency and reduces memory demands. Additionally, we employ a quantized 4-bit version of the model Face, facilitating training on T4 GPUs by minimizing the model’s size.In the implementation phase, the ‘FastLanguageModel‘ from the UnSLoth library AI is used to download Mistral-7B and set the maximum sequence length to 2048 tokens. Furthermore, LoRA technology is applied to train only 4% of the model’s parameters, utilizing techniques such as gradient accumulation and precision training to enhance training efficiency. Unlike the standard natural language processing approaches used with the SVM and LSTM models, this phase involves Supervised Fine-Tuning. Here, text data and their corresponding labels are formatted into prompts suitable for retraining the model on the machine-text classification task. Training is conducted using the PEFT technique Face combined with the SFT Trainer Face , optimizing the
+model’s performance in text classification.
 
 Folder structure
 --------------
 
 ```
-├──  base
-│   ├── base_model.py   - this file contains the abstract class of the model.
-│   └── base_train.py   - this file contains the abstract class of the trainer.
+├──  Code
+│   ├── aist4010_project_mistral7b.ipynb  - the running code for mistral7b
+│   ├── aist4010_cnn-lstm.ipynb   - the running code for BiLSTM series models.
+|   └── aist4010_svm.ipynb  - the running code for SVM series model.
 │
 │
-├── model               - this folder contains any model of your project.
-│   └── example_model.py
+├── Data_Generation - this folder contains the original data source
+│   ├── M4
+|   ├── MGTBench
+|   ├── MixSet
+|   └── Project Code.ipynb - the code for generating the datasets
 │
 │
-├── trainer             - this folder contains trainers of your project.
-│   └── example_trainer.py
-│   
-├──  mains              - here's the main(s) of your project (you may need more than one main).
-│    └── example_main.py  - here's an example of main that is responsible for the whole pipeline.
-
-│  
-├──  data _loader  
-│    └── data_generator.py  - here's the data_generator that is responsible for all data handling.
-│ 
-└── utils
-     ├── logger.py
-     └── any_other_utils_you_need
+├── Document  - this folder contains all the written documents
+│
+|   
+├── Figures_Results_Graphs - this folder contains all the generated results
+|   ├── Data - this folder contains the photos regarding the selected datasets
+|   ├── Figures - this folder contains the generated figure results
+|   ├── result - this folder contains the numeric results
+|   └── Training Log - this folder contains the training log for each model
+│
+| 
+└── Plotting Graphs - this folder cotains all the result for plotting the graph
+    ├── LSTM_general.json
+    ├── LSTM_MGTBench.json
+    ├── LSTM_Mix.json
+    ├── SVM_general.json
+    ├── SVM_MGTBench.json
+    ├── SVM_Mix.json
+    └── Plotting Results.ipynb
 
 ```
-
-
-## Main Components
-
-### Models
+Result
 --------------
-- #### **Base model**
-    
-    Base model is an abstract class that must be Inherited by any model you create, the idea behind this is that there's much shared stuff between all models.
-    The base model contains:
-    - ***Save*** -This function to save a checkpoint to the desk. 
-    - ***Load*** -This function to load a checkpoint from the desk.
-    - ***Cur_epoch, Global_step counters*** -These variables to keep track of the current epoch and global step.
-    - ***Init_Saver*** An abstract function to initialize the saver used for saving and loading the checkpoint, ***Note***: override this function in the model you want to implement.
-    - ***Build_model*** Here's an abstract function to define the model, ***Note***: override this function in the model you want to implement.
-- #### **Your model**
-    Here's where you implement your model.
-    So you should :
-    - Create your model class and inherit the base_model class
-    - override "build_model" where you write the tensorflow model you want
-    - override "init_save" where you create a tensorflow saver to use it to save and load checkpoint
-    - call the "build_model" and "init_saver" in the initializer.
 
-### Trainer
---------------
-- #### **Base trainer**
-    Base trainer is an abstract class that just wrap the training process.
-    
-- #### **Your trainer**
-     Here's what you should implement in your trainer.
-    1. Create your trainer class and inherit the base_trainer class.
-    2. override these two functions "train_step", "train_epoch" where you implement the training process of each step and each epoch.
-### Data Loader
-This class is responsible for all data handling and processing and provide an easy interface that can be used by the trainer.
-### Logger
-This class is responsible for the tensorboard summary, in your trainer create a dictionary of all tensorflow variables you want to summarize then pass this dictionary to logger.summarize().
-
-
-This class also supports reporting to **Comet.ml** which allows you to see all your hyper-params, metrics, graphs, dependencies and more including real-time metric.
-Add your API key [in the configuration file](configs/example.json#L9):
-
-For example: "comet_api_key": "your key here"
-
-
-### Comet.ml Integration
-This template also supports reporting to Comet.ml which allows you to see all your hyper-params, metrics, graphs, dependencies and more including real-time metric. 
-
-Add your API key [in the configuration file](configs/example.json#L9):
-
-
-For example:  `"comet_api_key": "your key here"` 
-
-Here's how it looks after you start training:
+### SVM Result
+M4 Dataset
 <div align="center">
-
-<img align="center" width="800" src="https://comet-ml.nyc3.digitaloceanspaces.com/CometDemo.gif">
-
+<img align="center" hight="600" width="600" src="https://github.com/derek33125/AITextDetection/blob/main/Figures_Results_Graphs/Figures/SVM/M4_Accuracy.png?raw=true">
 </div>
 
-You can also link your Github repository to your comet.ml project for full version control. 
-[Here's a live page showing the example from this repo](https://www.comet.ml/gidim/tensorflow-project-template/caba580d8d1547ccaed982693a645507/chart)
+MGTBench
+<div align="center">
+<img align="center" hight="600" width="600" src="https://github.com/derek33125/AITextDetection/blob/main/Figures_Results_Graphs/Figures/SVM/MGTBench_Accuracy.png?raw=true">
+</div>
+
+MixSet
+<div align="center">
+<img align="center" hight="600" width="600" src="https://github.com/derek33125/AITextDetection/blob/main/Figures_Results_Graphs/Figures/SVM/MixSet_Accuracy.png?raw=true">
+</div>
+
+### BiLSTM Result
+M4 Dataset
+<div align="center">
+<img align="center" hight="600" width="600" src="https://github.com/derek33125/AITextDetection/blob/main/Figures_Results_Graphs/Figures/BiLSTM/General_Test_Acccuracy_Table.png?raw=true">
+</div>
+
+MGTBench
+<div align="center">
+<img align="center" hight="600" width="600" src="https://github.com/derek33125/AITextDetection/blob/main/Figures_Results_Graphs/Figures/BiLSTM/MGTBench_Accuracy_Table.png?raw=true">
+</div>
+
+MixSet
+<div align="center">
+<img align="center" hight="600" width="600" src="https://github.com/derek33125/AITextDetection/blob/main/Figures_Results_Graphs/Figures/BiLSTM/MixSet_Method_Accuracy_Table.png?raw=true">
+</div>
 
 
-
-### Configuration
-I use Json as configuration method and then parse it, so write all configs you want then parse it using "utils/config/process_config" and pass this configuration object to all other objects.
-### Main
-Here's where you combine all previous part.
-1. Parse the config file.
-2. Create a tensorflow session.
-2. Create an instance of "Model", "Data_Generator" and "Logger" and parse the config to all of them.
-3. Create an instance of "Trainer" and pass all previous objects to it.
-4. Now you can train your model by calling "Trainer.train()"
+<div align="center">
+<img align="center" hight="600" width="600" src="?raw=true">
+</div>
 
 
-# Future Work
-- Replace the data loader part with new tensorflow dataset API.
+<div align="center">
+<img align="center" hight="600" width="600" src="?raw=true">
+</div>
 
 
-# Contributing
-Any kind of enhancement or contribution is welcomed.
-
-
-# Acknowledgments
-Thanks for my colleague  [Mo'men Abdelrazek](https://github.com/moemen95) for contributing in this work.
-and thanks for [Mohamed Zahran](https://github.com/moh3th1) for the review.
-**Thanks for Jtoy for including the repo in  [Awesome Tensorflow](https://github.com/jtoy/awesome-tensorflow).** 
+## Configuration
+Even though I wrote the methods for saving the testing results of different testing datasets into JSON files seperately, I did not write any code for further filtering the needed data to plot the figures automatically. You may either do it manually or writing method yourself. For some models like SVM, you may need to reduce the training dataset size first since it is very time consuming in training process.
