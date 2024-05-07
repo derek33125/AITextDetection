@@ -16,6 +16,10 @@ Please read the following document to know the detail behind this project:
        -  [BiLSTM series](#BiLSTM-Series)
        -  [Mistral 7B](#Mistral-7B)
     -  [Folder structure](#folder-structure)
+    -  [Result](#result)
+       - [SVM Result](#SVM-result)
+       - [BiLSTM Result](#BiLSTM-result)
+       - [Mistral 7B Result](#Mistral-result)
 
 # Getting Started   
 - In data generation, you can modify the code inside the **Data_Generation** folder to alter the training and testing dataset based on you need. If not, you can directly use the generated data inside the **Code** folder for direct testing.
@@ -36,7 +40,6 @@ To task the performance of those traditional machine-learning method for classif
 
 <div align="center">
 <img align="center" hight="600" width="600" src="https://github.com/derek33125/AITextDetection/blob/main/Figures_Results_Graphs/Figures/BiLSTM/BiLSTM%20series%20models.png?raw=true">
-
 </div>
 
 ### Mistral 7B
@@ -80,6 +83,50 @@ Folder structure
     └── Plotting Results.ipynb
 
 ```
+Result
+--------------
+
+### SVM Result
+M4 Dataset
+<div align="center">
+<img align="center" hight="600" width="600" src="https://github.com/derek33125/AITextDetection/blob/main/Figures_Results_Graphs/Figures/SVM/M4_Accuracy.png?raw=true">
+</div>
+
+MGTBench
+<div align="center">
+<img align="center" hight="600" width="600" src="https://github.com/derek33125/AITextDetection/blob/main/Figures_Results_Graphs/Figures/SVM/MGTBench_Accuracy.png?raw=true">
+</div>
+
+MixSet
+<div align="center">
+<img align="center" hight="600" width="600" src="https://github.com/derek33125/AITextDetection/blob/main/Figures_Results_Graphs/Figures/SVM/MixSet_Accuracy.png?raw=true">
+</div>
+
+### BiLSTM Result
+M4 Dataset
+<div align="center">
+<img align="center" hight="600" width="600" src="https://github.com/derek33125/AITextDetection/blob/main/Figures_Results_Graphs/Figures/BiLSTM/General_Test_Acccuracy_Table.png?raw=true">
+</div>
+
+MGTBench
+<div align="center">
+<img align="center" hight="600" width="600" src="https://github.com/derek33125/AITextDetection/blob/main/Figures_Results_Graphs/Figures/BiLSTM/MGTBench_Accuracy_Table.png?raw=true">
+</div>
+
+MixSet
+<div align="center">
+<img align="center" hight="600" width="600" src="https://github.com/derek33125/AITextDetection/blob/main/Figures_Results_Graphs/Figures/BiLSTM/MixSet_Method_Accuracy_Table.png?raw=true">
+</div>
+
+
+<div align="center">
+<img align="center" hight="600" width="600" src="?raw=true">
+</div>
+
+
+<div align="center">
+<img align="center" hight="600" width="600" src="?raw=true">
+</div>
 
 
 ## Configuration
