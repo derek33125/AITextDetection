@@ -1,9 +1,9 @@
 # AITextDetection
-This work investigates various methodologies, including Support Vector Machines (SVM) with RBF kernels, Bidirectional Long Short-Term Memory (BiLSTM) net3 works with attention mechanisms, and the Mistral model, for classifying machine4 generated text. We evaluate these models on the M4 dataset and MGTBench for out-of-distribution data, as well as on mixed data within MixSet. Our results indicate that SVMs equipped with RBF kernels and BiLSTMs augmented with attention mechanisms significantly outperform other models in their respective categories with over **96%** accuracy over M4 dataset and **97%** accuracy on unseen GPT4 generated data. Additionally, we find that the choice of data mixing method crucially impacts the effectiveness of the detectors, with the humanization approach posing the greatest challenge.
+This work investigates various methodologies, including Support Vector Machines (SVM) with RBF kernels, Bidirectional Long Short-Term Memory (BiLSTM) networks with attention mechanisms, and the Mistral model, for classifying machine generated text. We evaluate these models on the M4 dataset and MGTBench for out-of-distribution data, as well as on mixed data within MixSet. Our results indicate that SVMs equipped with RBF kernels and BiLSTMs augmented with attention mechanisms significantly outperform other models in their respective categories with over **96%** accuracy over M4 dataset and **97%** accuracy on unseen GPT4 generated data. Additionally, we find that the choice of data mixing method crucially impacts the effectiveness of the detectors, with the humanization approach posing the greatest challenge.
 
 # Table Of Contents
 
--  [In a Nutshell](#in-a-nutshell)
+-  [Getting Started](#getting-started)
 -  [In Details](#in-details)
     -  [Project architecture](#project-architecture)
     -  [Folder structure](#folder-structure)
@@ -18,7 +18,7 @@ This work investigates various methodologies, including Support Vector Machines 
  -  [Contributing](#contributing)
  -  [Acknowledgments](#acknowledgments)
 
-# In a Nutshell   
+# Getting Started   
 In a nutshell here's how to use this template, so **for example** assume you want to implement VGG model so you should do the following:
 -  In models folder create a class named VGG that inherit the "base_model" class
 
