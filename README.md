@@ -20,6 +20,7 @@ Please read the following document to know the detail behind this project:
        - [SVM Result](#SVM-result)
        - [BiLSTM Result](#BiLSTM-result)
        - [Mistral 7B Result](#Mistral-result)
+    - [Configuration](#Configuration)
 
 # Getting Started   
 - In data generation, you can modify the code inside the **Data_Generation** folder to alter the training and testing dataset based on you need. If not, you can directly use the generated data inside the **Code** folder for direct testing.
@@ -118,16 +119,21 @@ MixSet
 <img align="center" hight="600" width="600" src="https://github.com/derek33125/AITextDetection/blob/main/Figures_Results_Graphs/Figures/BiLSTM/MixSet_Method_Accuracy_Table.png?raw=true">
 </div>
 
-
+### Mistral 7B Result
+M4 Dataset
 <div align="center">
-<img align="center" hight="600" width="600" src="?raw=true">
+<img align="center" hight="600" width="600" src="https://github.com/derek33125/AITextDetection/blob/main/Figures_Results_Graphs/Figures/Mistral/Mistral%20M4%20table.png?raw=true">
 </div>
 
-
+MGTBench
 <div align="center">
-<img align="center" hight="600" width="600" src="?raw=true">
+<img align="center" hight="600" width="600" src="https://github.com/derek33125/AITextDetection/blob/main/Figures_Results_Graphs/Figures/Mistral/Mistral%20MGTBench%20table.png?raw=true">
 </div>
 
+MixSet
+<div align="center">
+<img align="center" hight="600" width="600" src="https://github.com/derek33125/AITextDetection/blob/main/Figures_Results_Graphs/Figures/Mistral/Mistral%20MixSet%20table.png?raw=true">
+</div>
 
 ## Configuration
 Even though I wrote the methods for saving the testing results of different testing datasets into JSON files seperately, I did not write any code for further filtering the needed data to plot the figures automatically. You may either do it manually or writing method yourself. For some models like SVM, you may need to reduce the training dataset size first since it is very time consuming in training process.
