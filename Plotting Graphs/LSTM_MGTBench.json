@@ -1,0 +1,245 @@
+[
+    {
+        "overall_accuracy": 0.7768491433347263,
+        "f1_score": 0.7750290152135004,
+        "precision": 0.7865401959963619,
+        "recall": 0.7768491433347263,
+        "auc": 0.7771146968426934,
+        "domain_accuracies": {
+            "story": 0.8074705439959889,
+            "essay": 0.6501509054325956,
+            "news": 0.87225
+        },
+        "model_accuracies": {
+            "human": 0.6863333333333334,
+            "GPT4": 0.8883642495784149,
+            "chatGPT": 0.8476666666666667
+        },
+        "classification_report": {
+            "0": {
+                "precision": 0.8393803505911129,
+                "recall": 0.6863333333333334,
+                "f1-score": 0.7551806345131121,
+                "support": 6000
+            },
+            "1": {
+                "precision": 0.7333899985833687,
+                "recall": 0.8678960603520537,
+                "f1-score": 0.7949938574938575,
+                "support": 5965
+            },
+            "accuracy": 0.7768491433347263,
+            "macro avg": {
+                "precision": 0.7863851745872408,
+                "recall": 0.7771146968426935,
+                "f1-score": 0.7750872460034848,
+                "support": 11965
+            },
+            "weighted avg": {
+                "precision": 0.7865401959963619,
+                "recall": 0.7768491433347263,
+                "f1-score": 0.7750290152135004,
+                "support": 11965
+            }
+        },
+        "model_name": "BiLSTM-Attention"
+    },
+    {
+        "overall_accuracy": 0.7687421646468867,
+        "f1_score": 0.7679856611157089,
+        "precision": 0.7725611101556528,
+        "recall": 0.7687421646468867,
+        "auc": 0.7689115674769489,
+        "domain_accuracies": {
+            "story": 0.7711205815993983,
+            "essay": 0.6654929577464789,
+            "news": 0.869
+        },
+        "model_accuracies": {
+            "human": 0.711,
+            "GPT4": 0.8610455311973019,
+            "chatGPT": 0.793
+        },
+        "classification_report": {
+            "0": {
+                "precision": 0.8050575580298169,
+                "recall": 0.711,
+                "f1-score": 0.7551110717762632,
+                "support": 6000
+            },
+            "1": {
+                "precision": 0.7398739873987399,
+                "recall": 0.8268231349538977,
+                "f1-score": 0.7809357928905074,
+                "support": 5965
+            },
+            "accuracy": 0.7687421646468867,
+            "macro avg": {
+                "precision": 0.7724657727142784,
+                "recall": 0.7689115674769489,
+                "f1-score": 0.7680234323333853,
+                "support": 11965
+            },
+            "weighted avg": {
+                "precision": 0.7725611101556528,
+                "recall": 0.7687421646468867,
+                "f1-score": 0.7679856611157089,
+                "support": 11965
+            }
+        },
+        "model_name": "BiLSTM"
+    },
+    {
+        "overall_accuracy": 0.7676556623485165,
+        "f1_score": 0.7674234396875083,
+        "precision": 0.7688782836858362,
+        "recall": 0.7676556623485165,
+        "auc": 0.7677504889633976,
+        "domain_accuracies": {
+            "story": 0.7791426422662321,
+            "essay": 0.6888832997987927,
+            "news": 0.8345
+        },
+        "model_accuracies": {
+            "human": 0.7353333333333333,
+            "GPT4": 0.8286677908937605,
+            "chatGPT": 0.772
+        },
+        "classification_report": {
+            "0": {
+                "precision": 0.7872947894361171,
+                "recall": 0.7353333333333333,
+                "f1-score": 0.760427438814202,
+                "support": 6000
+            },
+            "1": {
+                "precision": 0.7503537179688728,
+                "recall": 0.8001676445934619,
+                "f1-score": 0.7744604900210937,
+                "support": 5965
+            },
+            "accuracy": 0.7676556623485165,
+            "macro avg": {
+                "precision": 0.768824253702495,
+                "recall": 0.7677504889633976,
+                "f1-score": 0.7674439644176478,
+                "support": 11965
+            },
+            "weighted avg": {
+                "precision": 0.7688782836858362,
+                "recall": 0.7676556623485165,
+                "f1-score": 0.7674234396875083,
+                "support": 11965
+            }
+        },
+        "model_name": "CNN-BiLSTM-DouAttention"
+    },
+    {
+        "overall_accuracy": 0.7770162975344755,
+        "f1_score": 0.7769631628549147,
+        "precision": 0.7772166263388878,
+        "recall": 0.7770162975344755,
+        "auc": 0.7769733165688739,
+        "domain_accuracies": {
+            "story": 0.7686136876410128,
+            "essay": 0.727112676056338,
+            "news": 0.835
+        },
+        "model_accuracies": {
+            "human": 0.7916666666666666,
+            "GPT4": 0.7925801011804384,
+            "chatGPT": 0.7323333333333333
+        },
+        "classification_report": {
+            "0": {
+                "precision": 0.7701037613488976,
+                "recall": 0.7916666666666666,
+                "f1-score": 0.7807363576594346,
+                "support": 6000
+            },
+            "1": {
+                "precision": 0.7843712264964637,
+                "recall": 0.7622799664710813,
+                "f1-score": 0.7731678286005781,
+                "support": 5965
+            },
+            "accuracy": 0.7770162975344755,
+            "macro avg": {
+                "precision": 0.7772374939226807,
+                "recall": 0.7769733165688739,
+                "f1-score": 0.7769520931300063,
+                "support": 11965
+            },
+            "weighted avg": {
+                "precision": 0.7772166263388878,
+                "recall": 0.7770162975344755,
+                "f1-score": 0.7769631628549147,
+                "support": 11965
+            }
+        },
+        "model_name": "CNN_BiLSTM-Attention"
+    },
+    {
+        "overall_accuracy": 0.7666527371500209,
+        "f1_score": 0.7663674407788181,
+        "precision": 0.7681259876546884,
+        "recall": 0.7666527371500209,
+        "auc": 0.766757334450964,
+        "domain_accuracies": {
+            "story": 0.7620957633492104,
+            "essay": 0.6755533199195171,
+            "news": 0.86175
+        },
+        "model_accuracies": {
+            "human": 0.731,
+            "GPT4": 0.8320404721753795,
+            "chatGPT": 0.7733333333333333
+        },
+        "classification_report": {
+            "0": {
+                "precision": 0.7882818116462976,
+                "recall": 0.731,
+                "f1-score": 0.7585610515392597,
+                "support": 6000
+            },
+            "1": {
+                "precision": 0.7478518981409155,
+                "recall": 0.8025146689019279,
+                "f1-score": 0.7742196344816432,
+                "support": 5965
+            },
+            "accuracy": 0.7666527371500209,
+            "macro avg": {
+                "precision": 0.7680668548936065,
+                "recall": 0.766757334450964,
+                "f1-score": 0.7663903430104515,
+                "support": 11965
+            },
+            "weighted avg": {
+                "precision": 0.7681259876546884,
+                "recall": 0.7666527371500209,
+                "f1-score": 0.7663674407788181,
+                "support": 11965
+            }
+        },
+        "model_name": "CNN_BiLSTM"
+    },
+    {
+        "overall_accuracy": 0.746928541579607,
+        "f1_score": 0.74624231915266,
+        "precision": 0.7499267,
+        "recall": 0.746938,
+        "auc": 0.825725817267393,
+        "domain_accuracies": {
+            "story": 0.745550263223865,
+            "essay": 0.671026156941649,
+            "news": 0.82375
+        },
+        "model_accuracies": {
+            "human": 0.694333333333333,
+            "GPT4": 0.811467116357504,
+            "chatGPT": 0.788333333333333
+        },
+        "model_name": "SVM"
+    }
+]

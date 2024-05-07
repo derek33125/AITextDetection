@@ -1,0 +1,85 @@
+M4 dataset:
+
+Accuracy: 0.6747
+F1 Score: 0.7429
+Precision: 0.6044
+Recall: 0.9636
+AUC: 0.6816
+False Positives: 5376
+Results:  {'accuracy': 0.6746581221033359, 'precision': 0.6044150110375276, 'recall': 0.9636320976067574, 'f1_score': 0.7428778149588495, 'auc': 0.6815814905547469}
+Results saved to ./test_evaluation_results.json
+Plot saved as test_results.png
+Accuracy by Domain:
+source
+arxiv        0.557076
+peerread     0.917241
+reddit       0.792510
+wikihow      0.612274
+wikipedia    0.521765
+dtype: float64
+
+Accuracy by Model:
+model
+chatGPT    0.951204
+cohere     0.949224
+davinci    0.988791
+human      0.399531
+dtype: float64
+
+
+MGTBench:
+
+Accuracy: 0.5473
+F1 Score: 0.6862
+Precision: 0.5243
+Recall: 0.9930
+AUC: 0.5486
+False Positives: 5374
+Results:  {'accuracy': 0.5473464270789804, 'precision': 0.5242984863238028, 'recall': 0.9929589270746019, 'f1_score': 0.686247248291044, 'auc': 0.5486461302039676}
+Results saved to ./MGTBench_evaluation_results.json
+Plot saved as MGTBench_results.png
+Accuracy by Domain:
+source
+essay    0.532193
+news     0.581250
+story    0.528453
+dtype: float64
+
+Accuracy by Model:
+model
+GPT4       0.988533
+chatGPT    0.997333
+human      0.104333
+
+
+MixSet:
+Accuracy: 0.7693
+F1 Score: 0.8555
+Precision: 0.7583
+Recall: 0.9812
+AUC: 0.6325
+False Positives: 333
+Results:  {'accuracy': 0.769281045751634, 'precision': 0.7583454281567489, 'recall': 0.9812206572769953, 'f1_score': 0.8555055259926321, 'auc': 0.6325458125094654}
+Results saved to ./MixSet_evaluation_results.json
+Plot saved as MixSet_results.png
+Accuracy by Domain:
+source
+QA        0.995000
+blog      0.826923
+news      0.519608
+speech    0.522436
+dtype: float64
+
+Accuracy by Model:
+model
+GPT4     0.977778
+human    0.283871
+other    0.990000
+dtype: float64
+Accuracy by Dataset:
+dataset
+MixsetCOMPLETE           0.987097
+MixsetHUMANIZE           1.000000
+MixsetPOLISH_SENTENCE    0.941935
+MixsetREWRITE            0.961290
+dtype: float64

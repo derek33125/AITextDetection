@@ -1,0 +1,74 @@
+[
+    {
+        "overall_accuracy": 0.768825741746761,
+        "f1_score": 0.768058363836556,
+        "precision": 0.772762,
+        "recall": 0.768847,
+        "auc": 0.850509639564124,
+        "domain_accuracies": {
+            "story": 0.767861619453497,
+            "essay": 0.693661971830985,
+            "news": 0.8445
+        },
+        "model_accuracies": {
+            "human": 0.710666666666666,
+            "GPT4": 0.843507588532883,
+            "chatGPT": 0.811333333333333
+        },
+        "model_name": "Linear"
+    },
+    {
+        "overall_accuracy": 0.76665273715002,
+        "f1_score": 0.76336586023433,
+        "precision": 0.782992,
+        "recall": 0.766795,
+        "auc": 0.82802349818385,
+        "domain_accuracies": {
+            "story": 0.78114815743294,
+            "essay": 0.626760563380281,
+            "news": 0.89125
+        },
+        "model_accuracies": {
+            "human": 0.648333333333333,
+            "GPT4": 0.901517706576728,
+            "chatGPT": 0.87
+        },
+        "model_name": "Poly"
+    },
+    {
+        "overall_accuracy": 0.786209778520685,
+        "f1_score": 0.784992646892116,
+        "precision": 0.793235,
+        "recall": 0.786247,
+        "auc": 0.866423805532271,
+        "domain_accuracies": {
+            "story": 0.785911255953873,
+            "essay": 0.68033199195171,
+            "news": 0.89175
+        },
+        "model_accuracies": {
+            "human": 0.710333333333333,
+            "GPT4": 0.877908937605396,
+            "chatGPT": 0.847333333333333
+        },
+        "model_name": "RBF"
+    },
+    {
+        "overall_accuracy": 0.746928541579607,
+        "f1_score": 0.74624231915266,
+        "precision": 0.7499267,
+        "recall": 0.746938,
+        "auc": 0.825725817267393,
+        "domain_accuracies": {
+            "story": 0.745550263223865,
+            "essay": 0.671026156941649,
+            "news": 0.82375
+        },
+        "model_accuracies": {
+            "human": 0.694333333333333,
+            "GPT4": 0.811467116357504,
+            "chatGPT": 0.788333333333333
+        },
+        "model_name": "Sigmoid"
+    }
+]

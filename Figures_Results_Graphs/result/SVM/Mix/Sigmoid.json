@@ -1,0 +1,25 @@
+{
+    "overall_accuracy": 0.633333333333333,
+    "f1_score": 0.597082474428151,
+    "precision": 0.581532,
+    "recall": 0.6333287,
+    "auc": 0.528053914887172,
+    "dataset_accuracies": {
+        "Humanize": 0.5867172,
+        "Complete": 0.9742223,
+        "Rewrite": 0.9419525,
+        "Polish": 0.9097023
+    },
+    "domain_accuracies": {
+        "QA": 0.75,
+        "blog": 0.551282051282051,
+        "news": 0.519607843137254,
+        "speech": 0.602564102564102
+    },
+    "model_accuracies": {
+        "other": 0.913333333333333,
+        "human": 0.174193548387096,
+        "GPT4": 0.802614379084967
+    }
+
+}

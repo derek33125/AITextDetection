@@ -1,0 +1,2 @@
+1.Those code are using the following data inside the same folder
+2. Please run the mistral 7b on either colab or with good GPU requirement (at least a100)

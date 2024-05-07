@@ -1,0 +1,287 @@
+[
+    {
+        "overall_accuracy": 0.45294117647058824,
+        "f1_score": 0.4720125042947843,
+        "precision": 0.5537210004121769,
+        "recall": 0.45294117647058824,
+        "auc": 0.47437528396183554,
+        "dataset_accuracies": {
+            "Humanize": 0.013333,
+            "Complete": 0.593548,
+            "Rewrite": 0.638710,
+            "Polish": 0.638710
+        },
+        "domain_accuracies": {
+            "QA": 0.3383333333333333,
+            "blog": 0.5576923076923077,
+            "news": 0.4869281045751634,
+            "speech": 0.5352564102564102
+        },
+        "model_accuracies": {
+            "other": 0.5833333333333334,
+            "human": 0.5290322580645161,
+            "GPT4": 0.35555555555555557
+        },
+        "classification_report": {
+            "0": {
+                "precision": 0.2847222222222222,
+                "recall": 0.5290322580645161,
+                "f1-score": 0.37020316027088035,
+                "support": 465
+            },
+            "1": {
+                "precision": 0.6711711711711712,
+                "recall": 0.4197183098591549,
+                "f1-score": 0.5164644714038128,
+                "support": 1065
+            },
+            "accuracy": 0.45294117647058824,
+            "macro avg": {
+                "precision": 0.4779466966966967,
+                "recall": 0.47437528396183554,
+                "f1-score": 0.44333381583734655,
+                "support": 1530
+            },
+            "weighted avg": {
+                "precision": 0.5537210004121769,
+                "recall": 0.45294117647058824,
+                "f1-score": 0.4720125042947843,
+                "support": 1530
+            }
+        },
+        "model_name": "BiLSTM-Attention"
+    },
+    {
+        "overall_accuracy": 0.46601307189542485,
+        "f1_score": 0.48344190618761534,
+        "precision": 0.5736548422490009,
+        "recall": 0.46601307189542485,
+        "auc": 0.4964864455550507,
+        "dataset_accuracies": {
+            "Humanize": 0.006667,
+            "Complete": 0.077419,
+            "Rewrite": 0.129032,
+            "Polish": 0.090323
+        },
+        "domain_accuracies": {
+            "QA": 0.33666666666666667,
+            "blog": 0.5352564102564102,
+            "news": 0.5228758169934641,
+            "speech": 0.5897435897435898
+        },
+        "model_accuracies": {
+            "other": 0.61,
+            "human": 0.5741935483870968,
+            "GPT4": 0.3437908496732026
+        },
+        "classification_report": {
+            "0": {
+                "precision": 0.3013544018058691,
+                "recall": 0.5741935483870968,
+                "f1-score": 0.39526276831976315,
+                "support": 465
+            },
+            "1": {
+                "precision": 0.6925465838509317,
+                "recall": 0.4187793427230047,
+                "f1-score": 0.5219426565242832,
+                "support": 1065
+            },
+            "accuracy": 0.46601307189542485,
+            "macro avg": {
+                "precision": 0.4969504928284004,
+                "recall": 0.4964864455550507,
+                "f1-score": 0.45860271242202316,
+                "support": 1530
+            },
+            "weighted avg": {
+                "precision": 0.5736548422490009,
+                "recall": 0.46601307189542485,
+                "f1-score": 0.48344190618761534,
+                "support": 1530
+            }
+        },
+        "model_name": "BiLSTM"
+    },
+    {
+        "overall_accuracy": 0.3477124183006536,
+        "f1_score": 0.2709368750189484,
+        "precision": 0.5784685833691589,
+        "recall": 0.3477124183006536,
+        "auc": 0.5005603513554445,
+        "dataset_accuracies": {
+            "Humanize": 0.013333,
+            "Complete": 0.154839,
+            "Rewrite": 0.167742,
+            "Polish": 0.122581
+        },
+        "domain_accuracies": {
+            "QA": 0.11333333333333333,
+            "blog": 0.5128205128205128,
+            "news": 0.49673202614379086,
+            "speech": 0.48717948717948717
+        },
+        "model_accuracies": {
+            "other": 0.19666666666666666,
+            "human": 0.8903225806451613,
+            "GPT4": 0.07712418300653595
+        },
+        "classification_report": {
+            "0": {
+                "precision": 0.3041880969875092,
+                "recall": 0.8903225806451613,
+                "f1-score": 0.4534501642935378,
+                "support": 465
+            },
+            "1": {
+                "precision": 0.6982248520710059,
+                "recall": 0.1107981220657277,
+                "f1-score": 0.1912479740680713,
+                "support": 1065
+            },
+            "accuracy": 0.3477124183006536,
+            "macro avg": {
+                "precision": 0.5012064745292576,
+                "recall": 0.5005603513554445,
+                "f1-score": 0.3223490691808045,
+                "support": 1530
+            },
+            "weighted avg": {
+                "precision": 0.5784685833691589,
+                "recall": 0.3477124183006536,
+                "f1-score": 0.2709368750189484,
+                "support": 1530
+            }
+        },
+        "model_name": "CNN-BiLSTM-DouAttention"
+    },
+    {
+        "overall_accuracy": 0.3300653594771242,
+        "f1_score": 0.21784068659888883,
+        "precision": 0.5991857466728969,
+        "recall": 0.3300653594771242,
+        "auc": 0.5042404967439043,
+        "dataset_accuracies": {
+            "Humanize": 0.006667,
+            "Complete": 0.096774,
+            "Rewrite": 0.135484,
+            "Polish": 0.083871
+        },
+        "domain_accuracies": {
+            "QA": 0.055,
+            "blog": 0.4967948717948718,
+            "news": 0.5098039215686274,
+            "speech": 0.5160256410256411
+        },
+        "model_accuracies": {
+            "other": 0.10333333333333333,
+            "human": 0.9483870967741935,
+            "GPT4": 0.043137254901960784
+        },
+        "classification_report": {
+            "0": {
+                "precision": 0.3058252427184466,
+                "recall": 0.9483870967741935,
+                "f1-score": 0.46250655479811215,
+                "support": 465
+            },
+            "1": {
+                "precision": 0.7272727272727273,
+                "recall": 0.06009389671361502,
+                "f1-score": 0.11101474414570686,
+                "support": 1065
+            },
+            "accuracy": 0.3300653594771242,
+            "macro avg": {
+                "precision": 0.5165489849955869,
+                "recall": 0.5042404967439043,
+                "f1-score": 0.2867606494719095,
+                "support": 1530
+            },
+            "weighted avg": {
+                "precision": 0.5991857466728969,
+                "recall": 0.3300653594771242,
+                "f1-score": 0.21784068659888883,
+                "support": 1530
+            }
+        },
+        "model_name": "CNN_BiLSTM-Attention"
+    },
+    {
+        "overall_accuracy": 0.42287581699346405,
+        "f1_score": 0.416053859483368,
+        "precision": 0.5927740550597709,
+        "recall": 0.42287581699346405,
+        "auc": 0.5127517794941693,
+        "dataset_accuracies": {
+            "Humanize": 0.060000,
+            "Complete": 0.193548,
+            "Rewrite": 0.316129,
+            "Polish": 0.190645
+        },
+        "domain_accuracies": {
+            "QA": 0.24833333333333332,
+            "blog": 0.5224358974358975,
+            "news": 0.5588235294117647,
+            "speech": 0.5256410256410257
+        },
+        "model_accuracies": {
+            "other": 0.36666666666666664,
+            "human": 0.7419354838709677,
+            "GPT4": 0.25098039215686274
+        },
+        "classification_report": {
+            "0": {
+                "precision": 0.31137184115523464,
+                "recall": 0.7419354838709677,
+                "f1-score": 0.43865225683407505,
+                "support": 465
+            },
+            "1": {
+                "precision": 0.7156398104265402,
+                "recall": 0.28356807511737087,
+                "f1-score": 0.406186953597848,
+                "support": 1065
+            },
+            "accuracy": 0.42287581699346405,
+            "macro avg": {
+                "precision": 0.5135058257908874,
+                "recall": 0.5127517794941693,
+                "f1-score": 0.42241960521596156,
+                "support": 1530
+            },
+            "weighted avg": {
+                "precision": 0.5927740550597709,
+                "recall": 0.42287581699346405,
+                "f1-score": 0.416053859483368,
+                "support": 1530
+            }
+        },
+        "model_name": "CNN_BiLSTM"
+    },
+    {
+        "overall_accuracy": 0.633333333333333,
+        "f1_score": 0.597082474428151,
+        "precision": 0.581532,
+        "recall": 0.6333287,
+        "auc": 0.528053914887172,
+        "dataset_accuracies": {
+            "Humanize": 0.5567,
+            "Complete": 0.9677,
+            "Rewrite": 0.9935,
+            "Polish": 0.9677
+        },
+        "domain_accuracies": {
+            "QA": 0.75,
+            "blog": 0.551282051282051,
+            "news": 0.519607843137254,
+            "speech": 0.602564102564102
+        },
+        "model_accuracies": {
+            "other": 0.913333333333333,
+            "human": 0.174193548387096,
+            "GPT4": 0.802614379084967
+        },
+        "model_name": "SVM"
+    }
+]

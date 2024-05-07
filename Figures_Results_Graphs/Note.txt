@@ -1,0 +1,2 @@
+1. It contain the result of different models, training log and different figures
+2. Also contain the code for plotting different graphs

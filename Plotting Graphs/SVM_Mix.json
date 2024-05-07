@@ -1,0 +1,102 @@
+[
+    {
+        "overall_accuracy": 0.641176470588235,
+        "f1_score": 0.590766217419782,
+        "precision": 0.572946,
+        "recall": 0.641235,
+        "auc": 0.540572467060427,
+        "dataset_accuracies": {
+            "Humanize": 0.6367356,
+            "Complete": 0.98064587,
+            "Rewrite": 0.9613234,
+            "Polish": 0.9419445
+        },
+        "domain_accuracies": {
+            "QA": 0.79,
+            "blog": 0.541666666666666,
+            "news": 0.509803921568627,
+            "speech": 0.583333333333333
+        },
+        "model_accuracies": {
+            "other": 0.943333333333333,
+            "human": 0.129032258064516,
+            "GPT4": 0.833986928104575
+        },
+        "model_name": "Linear"
+    },
+    {
+        "overall_accuracy": 0.632026143790849,
+        "f1_score": 0.584607684135908,
+        "precision": 0.564993,
+        "recall": 0.632037,
+        "auc": 0.572542783583219,
+        "dataset_accuracies": {
+            "Humanize": 0.55671,
+            "Complete": 0.9806173,
+            "Rewrite": 0.9613098,
+            "Polish": 0.9419532
+        },
+        "domain_accuracies": {
+            "QA": 0.755,
+            "blog": 0.57051282051282,
+            "news": 0.506535947712418,
+            "speech": 0.580128205128205
+        },
+        "model_accuracies": {
+            "other": 0.953333333333333,
+            "human": 0.129032258064516,
+            "GPT4": 0.811764705882352
+        },
+        "model_name": "Poly"
+    },
+    {
+        "overall_accuracy": 0.645098039215686,
+        "f1_score": 0.585616329363307,
+        "precision": 0.565945,
+        "recall": 0.645187,
+        "auc": 0.559285173406027,
+        "dataset_accuracies": {
+            "Humanize": 0.6433307,
+            "Complete": 0.9806374,
+            "Rewrite": 0.9935537,
+            "Polish": 0.9806374
+        },
+        "domain_accuracies": {
+            "QA": 0.801666666666666,
+            "blog": 0.544871794871794,
+            "news": 0.49673202614379,
+            "speech": 0.589743589743589
+        },
+        "model_accuracies": {
+            "other": 0.96,
+            "human": 0.103225806451612,
+            "GPT4": 0.850980392156862
+        },
+        "model_name": "RBF"
+    },
+    {
+        "overall_accuracy": 0.633333333333333,
+        "f1_score": 0.597082474428151,
+        "precision": 0.581532,
+        "recall": 0.6333287,
+        "auc": 0.528053914887172,
+        "dataset_accuracies": {
+            "Humanize": 0.5867172,
+            "Complete": 0.9742223,
+            "Rewrite": 0.9419525,
+            "Polish": 0.9097023
+        },
+        "domain_accuracies": {
+            "QA": 0.75,
+            "blog": 0.551282051282051,
+            "news": 0.519607843137254,
+            "speech": 0.602564102564102
+        },
+        "model_accuracies": {
+            "other": 0.913333333333333,
+            "human": 0.174193548387096,
+            "GPT4": 0.802614379084967
+        },
+        "model_name": "Sigmoid"
+    }
+]
